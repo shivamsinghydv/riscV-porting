@@ -1,0 +1,31 @@
+==================================
+   GNU Hello : ./test-suite.log
+==================================
+
+# TOTAL: 5
+# PASS:  4
+# SKIP:  1
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+
+System information (uname -a): Linux 6.8.0-1052-azure #58~22.04.1-Ubuntu SMP Thu Mar 26 05:02:21 UTC 2026 riscv64
+Distribution information (/etc/os-release):
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.5
+ID=debian
+HOME_URL="https://www.debian.org/"
+
+.. contents:: :depth: 2
+
+SKIP: tests/greeting-2
+======================
+
+./tests/greeting-2: Skipping test: not a full moon night
+SKIP tests/greeting-2 (exit status: 77)
+

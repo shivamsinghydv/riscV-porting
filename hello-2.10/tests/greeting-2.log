@@ -1,0 +1,2 @@
+./tests/greeting-2: Skipping test: not a full moon night
+SKIP tests/greeting-2 (exit status: 77)

@@ -1,0 +1,12 @@
+Package: hello-dbgsym
+Source: hello
+Version: 2.10-5
+Auto-Built-Package: debug-symbols
+Architecture: riscv64
+Maintainer: Santiago Vila <sanvila@debian.org>
+Installed-Size: 70
+Depends: hello (= 2.10-5)
+Section: debug
+Priority: optional
+Description: debug symbols for hello
+Build-Ids: c946b964c37e3fc4445c7491a0152e6275d33bf5

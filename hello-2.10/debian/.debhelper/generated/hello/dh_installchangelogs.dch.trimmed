@@ -1,0 +1,49 @@
+hello (2.10-5) unstable; urgency=medium
+
+  * Add autopkgtest dependency on make. Closes: #1103293.
+    Thanks to Jochen Sprickerhof.
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 16 Apr 2025 11:50:00 +0200
+
+hello (2.10-4) unstable; urgency=medium
+
+  * Drop help2man from Build-Depends (not needed when using gbp/Salsa).
+  * Run autopkgtests in a way which also works for other GNU packages.
+    This change also fixes indirectly some undesired side effects
+    of the old ad-hoc setup. Closes: #1034115.
+  * Source should be buildable after a successful build. Closes: #1044215.
+  * Hardcode COPYRIGHT_YEAR to make the build reproducible.
+  * Drop obsolete debian/rules-old.
+  * Update standards version.
+  * Add debian/salsa-ci.yml.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 12 Apr 2025 23:45:00 +0200
+
+hello (2.10-3) unstable; urgency=medium
+
+  * Add some autopkgtests. Closes: #871622.
+  * Add Vcs-Git and Vcs-Browser fields to debian/control. Closes: #893083.
+  * Raise debhelper compat level from 9 to 13. This enables autoreconf,
+    and as a result, some additional build-dependencies are required:
+  - Add texinfo to Build-Depends, for a normal build.
+  - Add help2man to Build-Depends, for a build using git.
+  * Use secure URI in Homepage field.
+  * Set upstream metadata fields Bug-Submit, Name and Repository-Browse.
+  * Add upstream signing-key.
+  * Use a common debian/watch file which is valid for most GNU packages.
+  * Sort control fields using wrap-and-sort.
+  * Update standards version to 4.6.2.
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 26 Dec 2022 16:30:00 +0100
+
+hello (2.10-2) unstable; urgency=medium
+
+  * Fix version skew. Closes: #928887.
+  * Drop debian/compat and use new syntax to specify compat level.
+  * Standards-Version: 4.3.0 (no changes for this).
+  * Rules-Requires-Root: no
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 13 May 2019 20:06:50 +0200
+
+# Older entries have been removed from this changelog.
+# To read the complete changelog use `apt changelog hello`.

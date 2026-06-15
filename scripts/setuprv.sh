@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -e
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+mkdir -p "$REPO_ROOT/builds"
 
 if [ ! -e /proc/sys/fs/binfmt_misc/qemu-riscv64 ]; then
   echo "Registering riscv64 binfmt handler..."
@@ -19,8 +21,8 @@ else
   docker run -d \
     --platform=linux/riscv64 \
     --name riscv-dev \
-    -v "$(cd .. && pwd)":/workspace \
-    -w /workspace \
+    -v "$REPO_ROOT":/workspace \
+    -w /workspace/builds \
     debian:trixie \
     sleep infinity
 fi

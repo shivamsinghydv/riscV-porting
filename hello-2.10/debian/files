@@ -1,0 +1,3 @@
+hello-dbgsym_2.10-5_riscv64.deb debug optional automatic=yes
+hello_2.10-5_riscv64.buildinfo devel optional
+hello_2.10-5_riscv64.deb devel optional

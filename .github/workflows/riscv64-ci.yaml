@@ -20,20 +20,35 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      # 1. First, build your custom Dockerfile that contains the deb-src repository fixes
+      - name: Build Custom RISC-V Environment Image
+        run: |
+
+          docker build --platform linux/riscv64 --load -t my-riscv-env -f dockerfile .
+
       - name: Build Package inside emulated Debian environment
         run: |
           docker run --rm \
             --platform linux/riscv64 \
             -v ${{ github.workspace }}:/workspace \
             -w /workspace \
-            debian:trixie \
+            my-riscv-env \
             bash -c "
               apt-get update && \
               apt-get install -y build-essential devscripts lintian quilt && \
+              
+              # Isolate the build directory
+              mkdir -p /workspace/build/hello && \
+              cd /workspace/build/hello && \
+              
+              # Download source inside the isolated folder
               apt-get source -y hello && \
               cd hello-* && \
+              
+              # Build the package
               apt-get build-dep -y . && \
               dpkg-buildpackage -us -uc -b && \
+              
               echo '--- BUILD COMPLETE ---' && \
               ls -la ../hello*.deb
             "
