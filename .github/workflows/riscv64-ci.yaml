@@ -1,0 +1,39 @@
+name: Debian riscv64 Package Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-riscv64:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: riscv64
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Package inside emulated Debian environment
+        run: |
+          docker run --rm \
+            --platform linux/riscv64 \
+            -v ${{ github.workspace }}:/workspace \
+            -w /workspace \
+            debian:trixie \
+            bash -c "
+              apt-get update && \
+              apt-get install -y build-essential devscripts lintian quilt && \
+              apt-get source -y hello && \
+              cd hello-* && \
+              apt-get build-dep -y . && \
+              dpkg-buildpackage -us -uc -b && \
+              echo '--- BUILD COMPLETE ---' && \
+              ls -la ../hello*.deb
+            "
