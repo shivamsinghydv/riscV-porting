@@ -13,6 +13,7 @@ if [ "$(docker ps -q -f name=riscv-dev)" ]; then
 elif [ "$(docker ps -aq -f name=riscv-dev)" ]; then
   echo "Starting existing riscv-dev container..."
   docker start riscv-dev
+
 else
   echo "Building custom RISC-V development image..."
   docker build -t my-riscv-env .

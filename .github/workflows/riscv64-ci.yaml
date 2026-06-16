@@ -57,7 +57,9 @@ jobs:
               
               dpkg-buildpackage -us -uc -b && \
               
-              echo 'BUILD COMPLETE  ✅' && \
+              echo 'BUILD OK  ✅' && \
               echo 'Generated artifacts:' && \
-              ls -la ../*.deb
+              ls -la ../*.deb && \
+              ctest --output-on-failure -j$(nproc) && \
+              echo 'All tests Passed 🚀'
             "
