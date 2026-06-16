@@ -1,0 +1,21 @@
+Description: Fix OverflowError on riscv64 in ptrace error check
+ Replace signed c_long conversion (which overflows on large unsigned
+ ptrace return values) with a direct unsigned comparison against
+ c_ulong(-1), matching the already-declared c_ulong restype.
+Author: Shivam Kumar <shivam9661446@gmail.com>
+Bug-Debian: https://bugs.debian.org/1087588
+Forwarded: https://github.com/vstinner/python-ptrace/issues/88
+Last-Update: 2026-06-16
+--- a/ptrace/binding/func.py
++++ b/ptrace/binding/func.py
+@@ -155,8 +155,8 @@
+             raise PtraceError(message, errno=errno, pid=pid)
+     else:
+         result = _ptrace(command, pid, arg1, arg2)
+-        result_signed = c_long(result).value
+-        if result_signed == -1:
++        result_unsigned = c_ulong(result).value
++        if result_unsigned == c_ulong(-1).value:
+             errno = get_errno()
+             # peek operations may returns -1 with errno=0:
+             # it's not an error. For other operations, -1

@@ -1,0 +1,12 @@
+Package: python3-ptrace-dbgsym
+Source: python-ptrace
+Version: 0.9.9-0.3
+Auto-Built-Package: debug-symbols
+Architecture: riscv64
+Maintainer: Pierre Chifflier <pollux@debian.org>
+Installed-Size: 22
+Depends: python3-ptrace (= 0.9.9-0.3)
+Section: debug
+Priority: optional
+Description: debug symbols for python3-ptrace
+Build-Ids: c871e1849c5e457680bd9a2e7d209fe39d915c2c

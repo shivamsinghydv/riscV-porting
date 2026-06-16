@@ -20,11 +20,16 @@ else
 
   echo "Creating riscv-dev container..."
   docker run -d \
-    --platform=linux/riscv64 \
-    --name riscv-dev \
-    -v "$REPO_ROOT":/workspace \
-    -w /workspace/builds \
-    debian:trixie \
-    sleep infinity
+  --name riscv-dev \
+  --cap-add=SYS_PTRACE \
+  --security-opt seccomp=unconfined \
+  --cap-add=SYS_PTRACE \
+  --security-opt seccomp=unconfined \
+  --platform=linux/riscv64 \
+  -v "$REPO_ROOT":/workspace \
+  -w /workspace/builds \
+  debian:trixie \
+  sleep infinity
 fi
 echo "Ready. Use: docker exec -it riscv-dev bash"
+

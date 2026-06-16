@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Tue, 16 Jun 2026 11:02:31 +0000
+Source: python-ptrace
+Binary: python3-ptrace python3-ptrace-dbgsym
+Architecture: riscv64
+Version: 0.9.9-0.4
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Pierre Chifflier <pollux@debian.org>
+Changed-By: root <root@073443847ad4>
+Description:
+ python3-ptrace - Python 3 bindings for ptrace
+Changes:
+ python-ptrace (0.9.9-0.4) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+Checksums-Sha1:
+ 291922a8d86e95bcd66fcb0f4096e3f4d4c3fa6e 6215 python-ptrace_0.9.9-0.4_riscv64.buildinfo
+ e516a9448b8a273683030165e0b2b27e5c49bbdd 8428 python3-ptrace-dbgsym_0.9.9-0.4_riscv64.deb
+ 477009c194b66d0069aa1e44c0128b0c0bef4cc4 67920 python3-ptrace_0.9.9-0.4_riscv64.deb
+Checksums-Sha256:
+ d0fe4ac41e865e834ad487e7d94630a595ac1db6faa685fd486af147f56f8628 6215 python-ptrace_0.9.9-0.4_riscv64.buildinfo
+ caa7f4d4844e395f33571dc5c9fd6c5fae31996f8e56c8774986c79f2916a7db 8428 python3-ptrace-dbgsym_0.9.9-0.4_riscv64.deb
+ b16a694535db5ff894bd54d586b52bec4433f580ae3cf14ae366920dbcfd3ef3 67920 python3-ptrace_0.9.9-0.4_riscv64.deb
+Files:
+ 268ccf43cf743145f8c72c1a3457ddd4 6215 python optional python-ptrace_0.9.9-0.4_riscv64.buildinfo
+ af79b28866f40f95ed667e7a412466b7 8428 debug optional python3-ptrace-dbgsym_0.9.9-0.4_riscv64.deb
+ bfbc0394feda6babd4d2caac38dfd741 67920 python optional python3-ptrace_0.9.9-0.4_riscv64.deb

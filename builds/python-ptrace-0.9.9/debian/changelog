@@ -1,0 +1,175 @@
+python-ptrace (0.9.9-0.3) unstable; urgency=medium
+  * Non-maintainer upload.
+  * Fix FTBFS on riscv64: OverflowError in ptrace error checking
+    (Closes: #1087588)
+
+ -- Shivam Kumar <shivam9661446@gmail.com>  Tue, 16 Jun 2026 11:02:31 +0000
+
+python-ptrace (0.9.9-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add build-dependes on python3-setuptools (Closes: #1080761)
+
+ -- Alexandre Detiste <tchet@debian.org>  Sat, 22 Mar 2025 14:33:58 +0100
+
+python-ptrace (0.9.9-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream release, adding support for riscv64 and merging
+    python-3.12.patch.
+
+ -- Stephen Kitt <skitt@debian.org>  Sun, 17 Mar 2024 19:06:17 +0100
+
+python-ptrace (0.9.8-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Build with importlib instead of imp. Closes: #1055551.
+
+ -- Stephen Kitt <skitt@debian.org>  Wed, 06 Dec 2023 07:21:34 +0100
+
+python-ptrace (0.9.8-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Limit the architectures to those which are officially supported.
+
+ -- Stephen Kitt <skitt@debian.org>  Mon, 15 Aug 2022 14:42:58 +0200
+
+python-ptrace (0.9.8-0.1~exp1) experimental; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream release, adding support for arm64.
+  * Since this package only works on a limited number of architectures,
+    switch to “Architecture: any” and rely on the build-time tests to
+    filter the architectures. See the discussion starting with
+    <https://lists.debian.org/msgid-search/20210120203941.1a41cc06@heffalump.sk2.org>.
+    Closes: #976468.
+  * Clean up egg-info changes to allow building twice in a row.
+  * Build the CPython extension.
+
+ -- Stephen Kitt <skitt@debian.org>  Thu, 09 Sep 2021 08:42:02 +0200
+
+python-ptrace (0.9.7-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream release, adding ppc64 support, and merging
+    20-fix-egginfo-sources.patch. This will help with #976468; arm64
+    support will be included in the next upstream release.
+  * Build-depend on python3 instead of python3-dev since this package
+    isn’t an extension.
+  * Clean up whitespace.
+  * Switch to debhelper compatibility level 13.
+
+ -- Stephen Kitt <skitt@debian.org>  Mon, 04 Jan 2021 18:19:12 +0100
+
+python-ptrace (0.9.3-2.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Drop python2 support; Closes: #938052
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 20 Dec 2019 14:03:21 -0500
+
+python-ptrace (0.9.3-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Update debian/docs: Correct name of README, which is now
+    README.rst and remove TODO as upstream no longer ships a
+    TODO file.  (Closes: #903189)
+  * Set Rules-Requires-Root to no as python-ptrace does not
+    require (fake)root for producing the .debs.
+
+ -- Niels Thykier <niels@thykier.net>  Tue, 07 Aug 2018 08:33:18 +0000
+
+python-ptrace (0.9.3-2) unstable; urgency=medium
+
+  * Fix spelling error
+  * Add python3 package (Closes: #782949)
+
+ -- Pierre Chifflier <pollux@debian.org>  Sun, 29 Apr 2018 14:41:32 +0200
+
+python-ptrace (0.9.3-1) unstable; urgency=medium
+
+  * New upstream version 0.9.3 (Closes: #814262)
+  * Remove patch 10-set_errno_to_0_if_no_error, merged upstream
+  * Refreshed quilt patches
+  * Update homepage (Closes: #888910)
+  * Change priority from extra to optional
+  * Bump Standards Version to 4.1.4
+
+ -- Pierre Chifflier <pollux@debian.org>  Sun, 29 Apr 2018 14:24:08 +0200
+
+python-ptrace (0.7-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.7
+  * Remove leftovers from python-support
+  * Fix python egginfo
+  * Bump Standards Version to 3.9.5
+
+ -- Pierre Chifflier <pollux@debian.org>  Thu, 21 Aug 2014 20:58:02 +0200
+
+python-ptrace (0.6.4-2) unstable; urgency=low
+
+  * Build with python support in dehelper (Closes: #671054)
+
+ -- Pierre Chifflier <pollux@debian.org>  Wed, 02 May 2012 21:35:58 +0200
+
+python-ptrace (0.6.4-1) unstable; urgency=low
+
+  * Imported Upstream version 0.6.4
+    - This version should work on kfreebsd (Closes: #592637)
+  * Bump Standards Version to 3.9.3
+  * Switch to DH 9
+  * Convert debian/rules to dh format
+  * Fix bad errno handling in ptrace.binding.func.ptrace (Closes: #592648)
+    Thanks to Jakub Wilk for the patch.
+
+ -- Pierre Chifflier <pollux@debian.org>  Sat, 28 Apr 2012 16:49:32 +0200
+
+python-ptrace (0.6.3-1) unstable; urgency=low
+
+  * Imported Upstream version 0.6.3
+  * Bump Standards Version to 3.9.1
+  * Fix build-dep (use python-all instead of python-dev-all)
+  * Update licence for debian packaging
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Pierre Chifflier <pollux@debian.org>  Mon, 28 Mar 2011 22:00:45 +0200
+
+python-ptrace (0.6.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump standards version to 3.8.3 (no changes)
+
+ -- Pierre Chifflier <pollux@debian.org>  Thu, 17 Dec 2009 21:44:09 +0100
+
+python-ptrace (0.6-2) unstable; urgency=low
+
+  * Set minimum Python version to 2.5 (Closes: #516946)
+
+ -- Pierre Chifflier <pollux@debian.org>  Tue, 24 Feb 2009 18:17:58 +0100
+
+python-ptrace (0.6-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Upload to unstable
+
+ -- Pierre Chifflier <pollux@debian.org>  Tue, 24 Feb 2009 14:22:15 +0100
+
+python-ptrace (0.5-1) experimental; urgency=low
+
+  * New upstream release
+  * Update watch file
+
+ -- Pierre Chifflier <pollux@debian.org>  Thu, 18 Sep 2008 16:57:23 +0200
+
+python-ptrace (0.3.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Add watch file
+
+ -- Pierre Chifflier <pollux@debian.org>  Mon, 28 Jul 2008 10:38:22 +0200
+
+python-ptrace (0.3.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #491060)
+
+ -- Pierre Chifflier <pollux@debian.org>  Wed, 16 Jul 2008 10:31:47 +0200

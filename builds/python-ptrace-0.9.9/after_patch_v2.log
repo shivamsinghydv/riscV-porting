@@ -1,0 +1,219 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.5, pytest-9.1.0, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /workspace/builds/python-ptrace-0.9.9
+collecting ... collected 17 items
+
+tests/test_gdb.py::TestGdb::test_backtrace FAILED                        [  5%]
+tests/test_gdb.py::TestGdb::test_dbginfo FAILED                          [ 11%]
+tests/test_gdb.py::TestGdb::test_maps FAILED                             [ 17%]
+tests/test_gdb.py::TestGdb::test_print FAILED                            [ 23%]
+tests/test_gdb.py::TestGdb::test_proc FAILED                             [ 29%]
+tests/test_gdb.py::TestGdb::test_regs FAILED                             [ 35%]
+tests/test_gdb.py::TestGdb::test_where FAILED                            [ 41%]
+tests/test_strace.py::TestStrace::test_basic FAILED                      [ 47%]
+tests/test_strace.py::TestStrace::test_chdir FAILED                      [ 52%]
+tests/test_strace.py::TestStrace::test_exitcode FAILED                   [ 58%]
+tests/test_strace.py::TestStrace::test_exitsignal FAILED                 [ 64%]
+tests/test_strace.py::TestStrace::test_getcwd FAILED                     [ 70%]
+tests/test_strace.py::TestStrace::test_link FAILED                       [ 76%]
+tests/test_strace.py::TestStrace::test_open FAILED                       [ 82%]
+tests/test_strace.py::TestStrace::test_rename FAILED                     [ 88%]
+tests/test_strace.py::TestStrace::test_socket FAILED                     [ 94%]
+tests/test_strace.py::TestStrace::test_symlink FAILED                    [100%]
+
+=================================== FAILURES ===================================
+____________________________ TestGdb.test_backtrace ____________________________
+
+self = <test_gdb.TestGdb testMethod=test_backtrace>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:32: in run_command
+    ???
+E   AssertionError: Traceback in output: b'Unable to create child process: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/gdb.py", line 854, in runDebugger\n    self.process = self.createProcess()\n                   ~~~~~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nQuit gdb.\nERROR: Process can no be attached! Process 340 exited normally\nQuit gdb.'
+_____________________________ TestGdb.test_dbginfo _____________________________
+
+self = <test_gdb.TestGdb testMethod=test_dbginfo>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:32: in run_command
+    ???
+E   AssertionError: Traceback in output: b'Unable to create child process: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/gdb.py", line 854, in runDebugger\n    self.process = self.createProcess()\n                   ~~~~~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nQuit gdb.\nERROR: Process can no be attached! Process 348 exited normally\nQuit gdb.'
+______________________________ TestGdb.test_maps _______________________________
+
+self = <test_gdb.TestGdb testMethod=test_maps>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:32: in run_command
+    ???
+E   AssertionError: Traceback in output: b'Unable to create child process: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/gdb.py", line 854, in runDebugger\n    self.process = self.createProcess()\n                   ~~~~~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nQuit gdb.\nERROR: Process can no be attached! Process 356 exited normally\nQuit gdb.'
+______________________________ TestGdb.test_print ______________________________
+
+self = <test_gdb.TestGdb testMethod=test_print>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:32: in run_command
+    ???
+E   AssertionError: Traceback in output: b'Unable to create child process: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/gdb.py", line 854, in runDebugger\n    self.process = self.createProcess()\n                   ~~~~~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nQuit gdb.\nERROR: Process can no be attached! Process 364 exited normally\nQuit gdb.'
+______________________________ TestGdb.test_proc _______________________________
+
+self = <test_gdb.TestGdb testMethod=test_proc>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:32: in run_command
+    ???
+E   AssertionError: Traceback in output: b'Unable to create child process: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/gdb.py", line 854, in runDebugger\n    self.process = self.createProcess()\n                   ~~~~~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nQuit gdb.\nERROR: Process can no be attached! Process 372 exited normally\nQuit gdb.'
+______________________________ TestGdb.test_regs _______________________________
+
+self = <test_gdb.TestGdb testMethod=test_regs>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:32: in run_command
+    ???
+E   AssertionError: Traceback in output: b'Unable to create child process: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/gdb.py", line 854, in runDebugger\n    self.process = self.createProcess()\n                   ~~~~~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nQuit gdb.\nERROR: Process can no be attached! Process 380 exited normally\nQuit gdb.'
+______________________________ TestGdb.test_where ______________________________
+
+self = <test_gdb.TestGdb testMethod=test_where>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_gdb.py:32: in run_command
+    ???
+E   AssertionError: Traceback in output: b'Unable to create child process: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/gdb.py", line 854, in runDebugger\n    self.process = self.createProcess()\n                   ~~~~~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nQuit gdb.\nERROR: Process can no be attached! Process 388 exited normally\nQuit gdb.'
+____________________________ TestStrace.test_basic _____________________________
+
+self = <test_strace.TestStrace testMethod=test_basic>
+
+>   ???
+E   AssertionError: None is not true : b'Debugger error: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 259, in _main\n    exitcode = self.runDebugger()\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 229, in runDebugger\n    process = self.createProcess()\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 278, in createChild\n    pid = Application.createChild(self, program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nexecve(/usr/bin/python3, [\'/usr/bin/python3\', \'-c\', \'pass\'], [/* 40 vars */]) = 396\nERROR: Process can no be attached! Process 396 exited with code 1\n'
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:47: AssertionError
+____________________________ TestStrace.test_chdir _____________________________
+
+self = <test_strace.TestStrace testMethod=test_chdir>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:41: in assert_syscall
+    ???
+E   AssertionError: None is not true : b'Debugger error: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 259, in _main\n    exitcode = self.runDebugger()\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 229, in runDebugger\n    process = self.createProcess()\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 278, in createChild\n    pid = Application.createChild(self, program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nexecve(/usr/bin/python3, [\'/usr/bin/python3\', \'-c\', "import os; os.chdir(\'directory\')"], [/* 40 vars */]) = 404\nERROR: Process can no be attached! Process 404 exited with code 1\n'
+___________________________ TestStrace.test_exitcode ___________________________
+
+self = <test_strace.TestStrace testMethod=test_exitcode>
+
+>   ???
+E   AssertionError: 0 != 1
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:52: AssertionError
+__________________________ TestStrace.test_exitsignal __________________________
+
+self = <test_strace.TestStrace testMethod=test_exitsignal>
+
+>   ???
+E   AssertionError: 0 != 131
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:57: AssertionError
+____________________________ TestStrace.test_getcwd ____________________________
+
+self = <test_strace.TestStrace testMethod=test_getcwd>
+
+>   ???
+E   AssertionError: None is not true : b'Debugger error: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 259, in _main\n    exitcode = self.runDebugger()\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 229, in runDebugger\n    process = self.createProcess()\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 278, in createChild\n    pid = Application.createChild(self, program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nexecve(/usr/bin/python3, [\'/usr/bin/python3\', \'-c\', \'import os; os.getcwd()\'], [/* 40 vars */]) = 436\nERROR: Process can no be attached! Process 436 exited with code 1\n'
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:64: AssertionError
+_____________________________ TestStrace.test_link _____________________________
+
+self = <test_strace.TestStrace testMethod=test_link>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:41: in assert_syscall
+    ???
+E   AssertionError: None is not true : b'Debugger error: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 259, in _main\n    exitcode = self.runDebugger()\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 229, in runDebugger\n    process = self.createProcess()\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 278, in createChild\n    pid = Application.createChild(self, program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nexecve(/usr/bin/python3, [\'/usr/bin/python3\', \'-c\', "import os; os.link(\'oldpath\', \'newpath\')"], [/* 40 vars */]) = 444\nERROR: Process can no be attached! Process 444 exited with code 1\n'
+_____________________________ TestStrace.test_open _____________________________
+
+self = <test_strace.TestStrace testMethod=test_open>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:41: in assert_syscall
+    ???
+E   AssertionError: None is not true : b'Debugger error: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 259, in _main\n    exitcode = self.runDebugger()\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 229, in runDebugger\n    process = self.createProcess()\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 278, in createChild\n    pid = Application.createChild(self, program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nexecve(/usr/bin/python3, [\'/usr/bin/python3\', \'-c\', "open(\'/workspace/builds/python-ptrace-0.9.9/tests/test_strace.py\').close()"], [/* 40 vars */]) = 452\nERROR: Process can no be attached! Process 452 exited with code 1\n'
+____________________________ TestStrace.test_rename ____________________________
+
+self = <test_strace.TestStrace testMethod=test_rename>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:41: in assert_syscall
+    ???
+E   AssertionError: None is not true : b'Debugger error: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 259, in _main\n    exitcode = self.runDebugger()\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 229, in runDebugger\n    process = self.createProcess()\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 278, in createChild\n    pid = Application.createChild(self, program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nexecve(/usr/bin/python3, [\'/usr/bin/python3\', \'-c\', "import os; os.rename(\'oldpath\', \'newpath\')"], [/* 40 vars */]) = 460\nERROR: Process can no be attached! Process 460 exited with code 1\n'
+____________________________ TestStrace.test_socket ____________________________
+
+self = <test_strace.TestStrace testMethod=test_socket>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:41: in assert_syscall
+    ???
+E   AssertionError: None is not true : b'Debugger error: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 259, in _main\n    exitcode = self.runDebugger()\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 229, in runDebugger\n    process = self.createProcess()\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 278, in createChild\n    pid = Application.createChild(self, program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nexecve(/usr/bin/python3, [\'/usr/bin/python3\', \'-c\', \'import socket; socket.socket(socket.AF_INET,socket.SOCK_STREAM).close()\'], [/* 40 vars */]) = 468\nERROR: Process can no be attached! Process 468 exited with code 1\n'
+___________________________ TestStrace.test_symlink ____________________________
+
+self = <test_strace.TestStrace testMethod=test_symlink>
+
+>   ???
+
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/workspace/riscV-porting/builds/python-ptrace-0.9.9/tests/test_strace.py:41: in assert_syscall
+    ???
+E   AssertionError: None is not true : b'Debugger error: [ChildError] ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 95, in _createChild\n    ptrace_traceme()\n    ~~~~~~~~~~~~~~^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 173, in ptrace_traceme\n    ptrace(PTRACE_TRACEME)\n    ~~~~~~^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/binding/func.py", line 168, in ptrace\n    raise PtraceError(message, errno=errno, pid=pid)\nptrace.error.PtraceError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 259, in _main\n    exitcode = self.runDebugger()\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 229, in runDebugger\n    process = self.createProcess()\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 68, in createProcess\n    pid = self.createChild(self.program)\n  File "/workspace/builds/python-ptrace-0.9.9/strace.py", line 278, in createChild\n    pid = Application.createChild(self, program)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/application.py", line 47, in createChild\n    return createChild(arguments, self.options.no_stdout, env)\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 168, in createChild\n    _createChild(arguments,\n    ~~~~~~~~~~~~^^^^^^^^^^^\n                 no_stdout,\n                 ^^^^^^^^^^\n    ...<2 lines>...\n                 close_fds=close_fds,\n                 ^^^^^^^^^^^^^^^^^^^^\n                 pass_fds=pass_fds)\n                 ^^^^^^^^^^^^^^^^^^\n  File "/workspace/builds/python-ptrace-0.9.9/ptrace/debugger/child.py", line 97, in _createChild\n    raise ChildError(str(err))\nptrace.debugger.child.ChildError: ptrace(cmd=0, pid=0, 0, 0) error #38: Function not implemented\nexecve(/usr/bin/python3, [\'/usr/bin/python3\', \'-c\', "import os; os.symlink(\'target\', \'linkpath\')"], [/* 40 vars */]) = 476\nERROR: Process can no be attached! Process 476 exited with code 1\n'
+=========================== short test summary info ============================
+FAILED tests/test_gdb.py::TestGdb::test_backtrace - AssertionError: Traceback...
+FAILED tests/test_gdb.py::TestGdb::test_dbginfo - AssertionError: Traceback i...
+FAILED tests/test_gdb.py::TestGdb::test_maps - AssertionError: Traceback in o...
+FAILED tests/test_gdb.py::TestGdb::test_print - AssertionError: Traceback in ...
+FAILED tests/test_gdb.py::TestGdb::test_proc - AssertionError: Traceback in o...
+FAILED tests/test_gdb.py::TestGdb::test_regs - AssertionError: Traceback in o...
+FAILED tests/test_gdb.py::TestGdb::test_where - AssertionError: Traceback in ...
+FAILED tests/test_strace.py::TestStrace::test_basic - AssertionError: None is...
+FAILED tests/test_strace.py::TestStrace::test_chdir - AssertionError: None is...
+FAILED tests/test_strace.py::TestStrace::test_exitcode - AssertionError: 0 != 1
+FAILED tests/test_strace.py::TestStrace::test_exitsignal - AssertionError: 0 ...
+FAILED tests/test_strace.py::TestStrace::test_getcwd - AssertionError: None i...
+FAILED tests/test_strace.py::TestStrace::test_link - AssertionError: None is ...
+FAILED tests/test_strace.py::TestStrace::test_open - AssertionError: None is ...
+FAILED tests/test_strace.py::TestStrace::test_rename - AssertionError: None i...
+FAILED tests/test_strace.py::TestStrace::test_socket - AssertionError: None i...
+FAILED tests/test_strace.py::TestStrace::test_symlink - AssertionError: None ...
+============================= 17 failed in 26.37s ==============================

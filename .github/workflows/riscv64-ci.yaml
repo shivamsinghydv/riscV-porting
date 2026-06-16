@@ -53,7 +53,7 @@ jobs:
                 cd \"\$SRC_DIR\"
               fi
               
-              apt-get build-dep -y . && \
+              apt-get build-dep ctest -y . && \
               
               dpkg-buildpackage -us -uc -b && \
               

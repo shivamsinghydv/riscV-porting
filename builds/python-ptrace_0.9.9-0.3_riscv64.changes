@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Tue, 16 Jun 2026 11:02:31 +0000
+Source: python-ptrace
+Binary: python3-ptrace python3-ptrace-dbgsym
+Architecture: riscv64
+Version: 0.9.9-0.3
+Distribution: unstable
+Urgency: medium
+Maintainer: Pierre Chifflier <pollux@debian.org>
+Changed-By: Shivam Kumar <shivam9661446@gmail.com>
+Description:
+ python3-ptrace - Python 3 bindings for ptrace
+Closes: 1087588
+Changes:
+ python-ptrace (0.9.9-0.3) unstable; urgency=medium
+ .
+   * Non-maintainer upload.
+   * Fix FTBFS on riscv64: OverflowError in ptrace error checking
+     (Closes: #1087588)
+Checksums-Sha1:
+ 084c8b6246704baa32f77a847dd2db8412381641 6215 python-ptrace_0.9.9-0.3_riscv64.buildinfo
+ 6c60b3daffc88c5977325726d7ae918c868bf409 8428 python3-ptrace-dbgsym_0.9.9-0.3_riscv64.deb
+ 489189d320b75b39463f917b5665079a27eaa902 67904 python3-ptrace_0.9.9-0.3_riscv64.deb
+Checksums-Sha256:
+ 26d280e982ebba2aa3f58bdbd2dd32a0e5fc1aeb4bd9f22f6a7942e505e3059b 6215 python-ptrace_0.9.9-0.3_riscv64.buildinfo
+ 1396f1f8784114eaf262ba917b9b6980989f701bd65644a56a4f4c60b7693278 8428 python3-ptrace-dbgsym_0.9.9-0.3_riscv64.deb
+ 45471977a8336ea0233810ae8d13e6c2066cf454726dd1f5efeb9d395777d76a 67904 python3-ptrace_0.9.9-0.3_riscv64.deb
+Files:
+ 605be7dc023d23024a11a4bbbdf4a827 6215 python optional python-ptrace_0.9.9-0.3_riscv64.buildinfo
+ d72e10132ba4b547c8ae598eaf86df23 8428 debug optional python3-ptrace-dbgsym_0.9.9-0.3_riscv64.deb
+ b31e7a244bf878db428581b4eafb38a7 67904 python optional python3-ptrace_0.9.9-0.3_riscv64.deb

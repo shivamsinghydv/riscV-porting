@@ -1,0 +1,3 @@
+python-ptrace_0.9.9-0.3_riscv64.buildinfo python optional
+python3-ptrace-dbgsym_0.9.9-0.3_riscv64.deb debug optional automatic=yes
+python3-ptrace_0.9.9-0.3_riscv64.deb python optional

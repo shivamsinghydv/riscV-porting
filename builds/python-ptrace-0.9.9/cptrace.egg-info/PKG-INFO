@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: cptrace
+Version: 0.6.1
+Summary: python binding of ptrace written in C
+Home-page: http://python-ptrace.readthedocs.io/
+Download-URL: http://python-ptrace.readthedocs.io/
+Author: Victor Stinner
+License: GNU GPL v2
+Classifier: Intended Audience :: Developers
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: English
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python
+License-File: COPYING
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary
+
++++++++++++++++++++++
+cptrace Python module
++++++++++++++++++++++
+
+Python binding for ptrace written in C.
+
+Example
+=======
+
+Dummy example: ::
+
+    >>> import cptrace
+    >>> cptrace.ptrace(1, 1)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    ValueError: ptrace(request=1, pid=1, 0x(nil), 0x(nil)) error #1: Operation not permitted
+
+
