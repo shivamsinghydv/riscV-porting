@@ -34,6 +34,8 @@ jobs:
             bash -c "
               apt-get update && \
               apt-get install -y build-essential devscripts lintian quilt && \
+
+              apt-get install -y cmake && \
               
               DEBIAN_PATH=\$(find . -maxdepth 3 -type d -name 'debian' | head -n 1)
               
@@ -53,7 +55,7 @@ jobs:
                 cd \"\$SRC_DIR\"
               fi
               
-              apt-get build-dep ctest -y . && \
+              apt-get build-dep -y . && \
               
               dpkg-buildpackage -us -uc -b && \
               
