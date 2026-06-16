@@ -3,7 +3,6 @@
 339f14cd998f27b0595230b0cfe3c3c5  ./po/nb.gmo
 4fab037eca87181f2066bda633c7aca7  ./po/en@quot.header
 433b964638aef52c74d6f26164bfcbf4  ./po/Makefile.in.in
-db1bc95bd173fa3c398522bd2f8ba478  ./po/Makefile.in.in~
 ba79ecdb6efd5a5218c0e431506a2d47  ./po/eu.po
 0b430a48c9a900421c8d2a48e864a0a5  ./po/bg.gmo
 fb5df0705e7fac8ddd9ac5128cb3a1f9  ./po/Makevars.template
@@ -103,7 +102,6 @@ ae95d28c5c45c8512956a3267c110e5b  ./man/hello.x
 346322c29572fc322e8896198a9e4411  ./configure
 32d0c7ec87f712a9d22796e361d9c4f1  ./ABOUT-NLS
 2f69ea32ebf2715728e84816fc7ffeee  ./maint.mk
-cac756076735ed2d89d8be4647617842  ./config.in~
 bdf55e2b6df985d22cc39cc697ef225a  ./README
 d65d91fc9d3c008e9065698eccc69e6a  ./aclocal.m4
 11373eac1f9f09f27caebf2313249134  ./ChangeLog.O
@@ -131,10 +129,8 @@ f0fdbdbc148b77a6026c7e3113a59817  ./build-aux/snippet/arg-nonnull.h
 3cdb6c8759719c2492af3eb399018430  ./build-aux/snippet/c++defs.h
 5c553dceb94346916bf440305a504cad  ./build-aux/mdate-sh
 cb5f4573a6e51e6667b3444b9dc29b93  ./build-aux/useless-if-before-free
-8fe52bd1d1b88ebd50cb6763daec184c  ./build-aux/config.rpath~
 cb66dd5f16298121942bb3e8d49ddf9a  ./TODO
 d9cece93436564ffe46b0e7a9ef48055  ./NEWS
-a40f70c243c18c93fca7f3ff6bd9981c  ./configure~
 f4b22975b7a3f1f044521963b7f68890  ./INSTALL
 6c98796858194e9fa8cc5325c17e110f  ./Makefile.in
 8e331bc32ca678d8a0ed0563291cec3c  ./Makefile.am

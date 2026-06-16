@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Wed, 16 Apr 2025 11:50:00 +0200
+Source: hello
+Binary: hello hello-dbgsym
+Architecture: riscv64
+Version: 2.10-5
+Distribution: unstable
+Urgency: medium
+Maintainer: Santiago Vila <sanvila@debian.org>
+Changed-By: Santiago Vila <sanvila@debian.org>
+Description:
+ hello      - example package based on GNU hello
+Closes: 1103293
+Changes:
+ hello (2.10-5) unstable; urgency=medium
+ .
+   * Add autopkgtest dependency on make. Closes: #1103293.
+     Thanks to Jochen Sprickerhof.
+Checksums-Sha1:
+ 3e751a8f4a5f165dcedfb702af642c4c4d84a8ae 34588 hello-dbgsym_2.10-5_riscv64.deb
+ ce8245def4a253c8a8e04ce254fc01f57933dd9e 5158 hello_2.10-5_riscv64.buildinfo
+ 6122ab060dc8a92596ce22c4aad9c3bb4823766a 53096 hello_2.10-5_riscv64.deb
+Checksums-Sha256:
+ 073652606f62e52a60dbc8fc7ba7d57f434cf80d3926deaa402979b32f160c58 34588 hello-dbgsym_2.10-5_riscv64.deb
+ a1eff8a091ab3713b77ce6409a3283b4cb4345962d0ee0d1da172e1bdcd3bf53 5158 hello_2.10-5_riscv64.buildinfo
+ eb113a144e4523d78b45479a876a43454be67e6fe8aa50698147fccc45c64f7e 53096 hello_2.10-5_riscv64.deb
+Files:
+ 5570401e7b92c79ebeef6fa2c2deeda7 34588 debug optional hello-dbgsym_2.10-5_riscv64.deb
+ 2702fc98ed39a6d30aecce1665f84352 5158 devel optional hello_2.10-5_riscv64.buildinfo
+ 9327d73776244c679f06a868c3cc2e83 53096 devel optional hello_2.10-5_riscv64.deb
