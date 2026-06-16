@@ -26,7 +26,7 @@ jobs:
 
       - name: Build Package inside emulated Debian environment
         run: |
-          docker run --rm \
+          docker run --cap-add=SYS_PTRACE --rm \
             --platform linux/riscv64 \
             -v ${{ github.workspace }}:/workspace \
             -w /workspace \
